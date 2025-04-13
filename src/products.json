@@ -1,9 +1,44 @@
 [
-    { "id": 1, "name": "iPhone 13", "price": 799, "image": "/iphone13.jpg" },
-    { "id": 2, "name": "Samsung Galaxy S22", "price": 749, "image": "/s22.jpg" },
-    { "id": 3, "name": "Google Pixel 6", "price": 599, "image": "/pixel6.jpg" },
-    { "id": 4, "name": "OnePlus 9", "price": 729, "image": "/oneplus9.jpg" },
-    { "id": 5, "name": "Xiaomi Mi 11", "price": 699, "image": "/mi11.jpg" },
-    { "id": 6, "name": "Sony Xperia 5 II", "price": 949, "image": "/xperia5ii.jpg" }
-  ]
-  
+  {
+    "id": 1,
+    "name": "iPhone11",
+    "price": 250,
+    "image": "/iphone11.webp",
+    "description": "iPhone 11 оснащён великолепным экраном, мощным процессором и отличной системой камер."
+  },
+  {
+    "id": 2,
+    "name": "iPhone12",
+    "price": 300,
+    "image": "/iphone12.webp",
+    "description": "iPhone 12 предлагает улучшенную производительность, поддержку 5G и превосходное качество фото и видео."
+  },
+  {
+    "id": 3,
+    "name": "iPhone13",
+    "price": 350,
+    "image": "/iphone13.webp",
+    "description": "iPhone 13 — это яркий дисплей, мощный чип A15 Bionic и усовершенствованная камера."
+  },
+  {
+    "id": 4,
+    "name": "iPhone14",
+    "price": 400,
+    "image": "/iphone14.webp",
+    "description": "iPhone 14 сочетает в себе стильный дизайн, высокую производительность и новые функции безопасности."
+  },
+  {
+    "id": 5,
+    "name": "iPhone15",
+    "price": 450,
+    "image": "/iphone15.webp",
+    "description": "iPhone 15 — это инновационный смартфон с передовыми возможностями камеры и энергоэффективностью."
+  },
+  {
+    "id": 6,
+    "name": "iPhone16",
+    "price": 500,
+    "image": "/iphone16.webp",
+    "description": "iPhone 16 предлагает исключительное быстродействие, яркий дисплей и передовые технологии Apple."
+  }
+]

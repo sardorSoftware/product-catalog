@@ -1,13 +1,45 @@
-import ProductCard from './ProductCard';
+"use client"
 
-const ProductList = ({ products }) => {
+import { useState } from "react"
+import { useProducts } from "@/context/ProductContext"
+import ProductCard from "./ProductCard"
+
+export default function ProductList() {
+  const { products } = useProducts()
+  const [visibleProducts, setVisibleProducts] = useState(3)
+  const [searchTerm, setSearchTerm] = useState("")
+
+  const filteredProducts = products.filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
+
+  const displayedProducts = filteredProducts.slice(0, visibleProducts)
+
+  const loadMore = () => {
+    setVisibleProducts((prev) => prev + 3)
+  }
+
   return (
-    <div className="product-list">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </div>
-  );
-};
+    <div className="product-list-container">
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-input"
+        />
+      </div>
 
-export default ProductList;
+      <div className="product-list">
+        {displayedProducts.map((product) => (
+          <ProductCard key={product.id} {...product} />
+        ))}
+      </div>
+
+      {visibleProducts < filteredProducts.length && (
+        <button onClick={loadMore} className="load-more-btn">
+          Показать больше
+        </button>
+      )}
+    </div>
+  )
+}
