@@ -1,0 +1,9 @@
+[
+    { "id": 1, "name": "iPhone 13", "price": 799, "image": "/iphone13.jpg" },
+    { "id": 2, "name": "Samsung Galaxy S22", "price": 749, "image": "/s22.jpg" },
+    { "id": 3, "name": "Google Pixel 6", "price": 599, "image": "/pixel6.jpg" },
+    { "id": 4, "name": "OnePlus 9", "price": 729, "image": "/oneplus9.jpg" },
+    { "id": 5, "name": "Xiaomi Mi 11", "price": 699, "image": "/mi11.jpg" },
+    { "id": 6, "name": "Sony Xperia 5 II", "price": 949, "image": "/xperia5ii.jpg" }
+  ]
+  
