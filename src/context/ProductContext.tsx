@@ -18,14 +18,14 @@ interface ProductContextType {
 const ProductContext = createContext<ProductContextType | undefined>(undefined)
 
 export function ProductProvider({ children }: { children: ReactNode }) {
-  const products = productsData
+  const products: Product[] = productsData
 
   return <ProductContext.Provider value={{ products }}>{children}</ProductContext.Provider>
 }
 
-export function useProducts() {
+export const useProducts = (): ProductContextType => {
   const context = useContext(ProductContext)
-  if (context === undefined) {
+  if (!context) {
     throw new Error("useProducts must be used within a ProductProvider")
   }
   return context
