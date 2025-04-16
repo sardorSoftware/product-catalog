@@ -6,10 +6,12 @@ import ProductCard from "./ProductCard"
 
 export default function ProductList() {
   const { products } = useProducts()
-  const [visibleProducts, setVisibleProducts] = useState(3)
-  const [searchTerm, setSearchTerm] = useState("")
+  const [visibleProducts, setVisibleProducts] = useState<number>(3)
+  const [searchTerm, setSearchTerm] = useState<string>("")
 
-  const filteredProducts = products.filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
   const displayedProducts = filteredProducts.slice(0, visibleProducts)
 
