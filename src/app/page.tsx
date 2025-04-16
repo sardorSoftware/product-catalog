@@ -6,7 +6,7 @@ export default function Home() {
       <h1>Добро пожаловать в каталог продукции</h1>
       <p>Просмотрите нашу коллекцию продуктов</p>
       <Link href="/products" className="btn">
-      Посмотреть продукты
+        Посмотреть продукты
       </Link>
     </div>
   )

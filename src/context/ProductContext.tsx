@@ -18,9 +18,13 @@ interface ProductContextType {
 const ProductContext = createContext<ProductContextType | undefined>(undefined)
 
 export function ProductProvider({ children }: { children: ReactNode }) {
-  const products: Product[] = productsData
+  const products: Product[] = productsData as Product[]
 
-  return <ProductContext.Provider value={{ products }}>{children}</ProductContext.Provider>
+  return (
+    <ProductContext.Provider value={{ products }}>
+      {children}
+    </ProductContext.Provider>
+  )
 }
 
 export const useProducts = (): ProductContextType => {

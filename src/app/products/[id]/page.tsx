@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import productsData from "@/products.json";
 
-// Optional: Strong type for a product item
 type Product = {
   id: number;
   name: string;
@@ -12,17 +11,9 @@ type Product = {
   image?: string;
 };
 
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
-
-// Generate metadata for each product page
-export async function generateMetadata({ params }: PageProps) {
-  const product = (productsData as Product[]).find(
-    (p) => p.id === Number.parseInt(params.id)
-  );
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const product = (productsData as Product[]).find((p) => p.id === Number(id));
 
   if (!product) {
     return {
@@ -37,11 +28,9 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-// Page Component
-export default function ProductPage({ params }: PageProps) {
-  const product = (productsData as Product[]).find(
-    (p) => p.id === Number.parseInt(params.id)
-  );
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const product = (productsData as Product[]).find((p) => p.id === Number(id));
 
   if (!product) {
     notFound();
@@ -59,7 +48,9 @@ export default function ProductPage({ params }: PageProps) {
           <Image
             src={
               product.image ||
-              `/placeholder.svg?height=300&width=300&text=${encodeURIComponent(product.name)}`
+              `/placeholder.svg?height=300&width=300&text=${encodeURIComponent(
+                product.name
+              )}`
             }
             alt={product.name}
             width={300}
